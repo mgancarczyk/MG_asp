@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    @*<link rel="stylesheet"
+        asp-href-include="lib/bootstrap/dist/css/*.min.css"
+        asp-href-exclude="**/*-reboot*,**/*-grid*" />*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <title>SportsStore</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse bg-inverse"
+         role="navigation">
+        <a class="navbar-brand" href="#">Sklep sportowy</a>
+    </div>
+    <div class="row m-1 p-1 ">
+        <div id="categories" class="col-3">
+            @await Component.InvokeAsync("NavigationMenu")  @*Wołamy kontroler*@
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

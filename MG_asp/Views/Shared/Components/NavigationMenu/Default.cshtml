@@ -1,0 +1,34 @@
+﻿@model IEnumerable<string>
+
+<a class="btn btn-block btn-secondary"
+   asp-action="List"
+   asp-controller="Product"
+   asp-route-category="">
+    Strona główna
+</a>
+@*<br />
+<a class="btn btn-block btn-secondary"
+   asp-action="Edit"
+   asp-controller="Admin"
+   asp-route-category="">
+    Admin - Edit
+</a>
+<a class="btn btn-block btn-secondary"
+   asp-action="Index"
+   asp-controller="Admin"
+   asp-route-category="">
+    Admin - Index
+</a>*@
+
+@foreach (string category in Model) //iterujemy po wszystkich medelach komponentu
+{
+    <a class="btn btn-block btn-secondary"  @*Twozenie linkow controler w*@
+       asp-action="List"                           
+       asp-controller="Product"                      
+       asp-route-category="@category">
+        | @category |
+    </a>
+}
+
+
+
